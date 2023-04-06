@@ -48,7 +48,10 @@ function triangleArea() {
     // get values
     const base = document.getElementById('base').value;
     const height = document.getElementById('height').value;
-
+    if(base === "" || height === ""){
+        alert("Tolong masukkan angka");
+        return;
+    }
     // calculate area
     const area = 1/2 * base * height;
 
@@ -68,7 +71,10 @@ function trianglePerimeter() {
     const side1  = document.getElementById('side1').value;
     const side2  = document.getElementById('side2').value;
     const side3  = document.getElementById('side3').value;
-
+    if(side1 === "" || side2 === "" || side3){
+        alert("Tolong masukkan angka");
+        return;
+    }
     // count
     const perimeter = parseInt(side1) + parseInt(side2) + parseInt(side3);
 
@@ -87,7 +93,10 @@ function parallelogramArea() {
     // get the values
     const base = document.getElementById('parallelogramBase').value;
     const height = document.getElementById('parallelogramHeight').value;
-
+    if(base === "" || height === ""){
+        alert("Tolong masukkan angka");
+        return;
+    }
     // count
     const area = base * height;
 
@@ -104,14 +113,17 @@ function parallelogramArea() {
 
 function parallelogramPerimeter() {
     // get the values
-    const s2n3 = document.getElementById('ab-side').value;
-    const s2n4 = document.getElementById('bc-side').value;
-
-    const perimeter = 2 * (parseInt(s2n3) + parseInt(s2n4));
+    const ab_side = document.getElementById('ab-side').value;
+    const bc_side = document.getElementById('bc-side').value;
+    if(ab_side === "" || bc_side === ""){
+        alert("Tolong masukkan angka");
+        return;
+    }
+    const perimeter = 2 * (parseInt(ab_side) + parseInt(bc_side));
 
     // assign result
     const result = `K = 2 x (a + b) <br>
-                    K = 2 x (${s2n3} + ${s2n4}) <br>
+                    K = 2 x (${ab_side} + ${bc_side}) <br>
                     K = ${perimeter}`;
 
     const parent = document.getElementById('parallelogramPerimeterRes');

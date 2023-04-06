@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KATIK | Kalkulator Matematika RevoU</title>
+
+    <!-- style start -->
+    <link rel="stylesheet" href="assets/css/index.css">
+    <!-- style end -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- script start -->
+    <script src="assets/js/index.js"></script>
+    <!-- script end -->
+</head>
+<body>
+<!-- header / navbar start -->
+<header class="sticky-top">
+    <nav>
+        <ul class="nav">
+            <li class="nav-item">
+                <a id="triangleLink" class="active nav-link" href="#segitiga" onClick="triangleLink()">
+                    <p>Segitiga</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a id="parallelogramLink" class="nav-link" href="#jajargenjang" onClick="parallelogramLink()">
+                    <p>Jajar Genjang</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<!-- header / navbar end -->
+
+<!-- title start-->
+<div class="title">
+    <h1 style="font-family: 'Montserrat', sans-serif">Welcome to Katik (Kalkulator Matematika)</h1>
+    <p class="header-desc">
+        Katik adalah kalkulator matematika yang dibuat untuk mempermudah proses perhitungan matematika, terutama dalam
+        menghitung luas serta keliling bangun datar.
+    </p>
+</div>
+<!-- title end -->
+
+<!-- main page start-->
+<main>
+    <!-- segitiga start -->
+    <section id="segitiga">
+        <div class="card triangle-card w-50 mx-auto">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Luas Segitiga</h3>
+                </div>
+            </div>
+            <div class="img mt-5">
+                <img src="./images/segitigaa.png" alt="Luas Segitiga" width="50%">
+            </div>
+            <div class="desc">
+                <em>Luas Segitiga: 1/2 x Alas x Tinggi</em>
+            </div>
+            <div class="card-body">
+                <form id="triangleAreaForm">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="base">Alas</label>
+                                <input type="number" min="0" name="base" id="base" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="height">Tinggi</label>
+                                <input type="number" min="0" name="height" id="height" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div id="triangleAreaRes"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-info" onclick="triangleArea()">Hitung</button>
+                <button type="reset" class="btn btn-default" onclick="reset('triangleAreaForm','triangleAreaRes')">Reset</button>
+            </div>
+        </div>
+        <div class="card triangle-card w-50 mx-auto ">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Keliling Segitiga</h3>
+                </div>
+            </div>
+            <div class="img mt-5">
+                <img src="./images/download.png" alt="Keliling Segitiga" width="60%">
+            </div>
+            <div class="desc">
+                <em>Keliling Segitiga: a + b + c</em>
+            </div>
+            <div class="card-body">
+                <form id="trianglePerimeterForm">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="side1">Sisi A</label>
+                                <input type="number" min="0" name="side1" id="side1" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="side2">Sisi B</label>
+                                <input type="number" min="0" name="side2" id="side2" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="side3">Sisi C</label>
+                                <input type="number" min="0" name="side3" id="side3" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div id="trianglePerimeterRes"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-info" onclick="trianglePerimeter()">Hitung</button>
+                <button type="reset" class="btn btn-default" onclick="reset('trianglePerimeterForm','trianglePerimeterRes')">Reset</button>
+            </div>
+        </div>
+    </section>
+    <!-- segitiga end -->
+
+    <!-- jajar genjang start -->
+    <section id="jajargenjang" class="hide">
+        <div class="card parallelogram-card w-50 mx-auto">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Luas Jajar Genjang</h3>
+                </div>
+            </div>
+            <div class="img">
+                <img src="./images/jajargenjang.jpg" alt="Luas Jajar Genjang" width="25%">
+            </div>
+            <div class="desc">
+                <em>Luas Jajar Genjang = Alas x Tinggi</em>
+            </div>
+            <div class="card-body">
+                <form id="parallelogramAreaForm">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="parallelogramBase">Alas</label>
+                                <input type="number" min="0" name="parallelogramBase" id="parallelogramBase" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="parallelogramHeight">Tinggi</label>
+                                <input type="number" min="0" name="parallelogramHeight" id="parallelogramHeight" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div id="parallelogramAreaRes"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-info" onclick="parallelogramArea()">Hitung</button>
+                <button type="reset" class="btn btn-default" onclick="reset('parallelogramAreaForm', 'parallelogramAreaRes')">Reset</button>
+            </div>
+        </div>
+        <div class="card parallelogram-card w-50 mx-auto">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Keliling Jajar Genjang</h3>
+                </div>
+            </div>
+            <div class="img">
+                <img src="./images/jajargenjang.jpg" alt="Keliling Jajar Genjang" width="25%">
+            </div>
+            <div class="desc">
+                <em>Keliling Jajar Genjang = 2 x (AB + BC)</em>
+            </div>
+            <div class="card-body">
+                <form id="parallelogramPerimeterForm">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="ab-side">AB</label>
+                                <input type="number" min="0" name="ab-side" id="ab-side" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="bc-side">BC</label>
+                                <input type="number" min="0" name="bc-side" id="bc-side" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div id="parallelogramPerimeterRes"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-info" onclick="parallelogramPerimeter()">Hitung</button>
+                <button type="reset" class="btn btn-default" onclick="reset('parallelogramPerimeterForm', 'parallelogramPerimeterRes')">Reset</button>
+            </div>
+        </div>
+    </section>
+    <!-- jajar genjang end -->
+</main>
+<!-- main page end -->
+
+<!-- footer start -->
+<footer class="footer sticky-bottom">
+    <p>Copyright &copy;2023 Jalu Iman Fazlurrahman</p>
+</footer>
+<!-- footer end -->
+
+</body>
+</html>
